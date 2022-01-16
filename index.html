@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Presupuesto</title>
+    <link href="CSS/estilos.css" rel="stylesheet"/>
+</head>
+<body onload="cargarApp()">
+    <header>
+        <a class="logo" href="/"><img src="images/inversionista.png" width="200px" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Precios</a></li>
+                <li><a href="#">Acerca de</a></li>
+
+            </ul>
+        </nav>
+        <a class="cta" href="#">Contacto</a>
+        <p class="menu cta">Menu</p>
+    </header>
+    <div id="mobile__menu" class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+    <div class="cabecero">
+        <div class="presupuesto">
+            <div class="presupuesto_titulo">Dinero Disponible:</div>
+            <div class="presupuesto_valor" id="presupuesto">+2,000.00</div>
+            <div class="presupuesto_ingreso limpiarEstilos">
+                <div class="presupuesto_ingreso--texto">ingresos</div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id="ingresos">+4,000.00</div>
+                    <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+                </div>
+            </div>
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">egresos</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="presupuesto_egreso--valor" id="egresos">-1,987.00</div>
+                    <div class="presupuesto_egreso--porcentaje" id="porcentaje">45%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="forma" onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <select class="agregar_tipo" id="tipo">
+                    <option value="ingreso" selected>+</option>
+                    <option value="egreso">-</option>
+                </select>
+                <input type="text" class="agregar_descripcion"
+                placeholder="Descripcion" id="descripcion"/>
+                <input type="number" class="agregar_valor"
+                placeholder="Valor" id="valor" step="any"/>
+                <button class="agregar_btn" onclick="agregarDato()">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+<div class="contenedor limpiarEstilos">
+    <div class="ingreso">
+        <h2 class="ingreso_titulo">ingresos</h2>
+        <div id="lista-ingresos">
+        </div>
+    </div>
+    <div class="egreso">
+        <h2 class="egreso_titulo">egresos</h2>
+        <div id="lista-egresos">
+            <div class="elemento limpiarEstilos">
+                <div class="elemento_descripcion">Renta departamento</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="elemento_valor">- 900.00</div>
+                    <div class="elemento_porcentaje">21%</div>
+                    <div class="elemento_eliminar">
+                        <button class="elemento_eliminar--btn">
+                            <ion-icon name="close-circle"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p class="fotero">Copyright © 2021 Inversionista. Todos los derechos reservados</p>
+</footer>
+
+    <!--JAVASCRIPT-->
+    <script src="JS/Dato.js"></script>
+    <script src="JS/Ingreso.js"></script>
+    <script src="JS/Egreso.js"></script>
+    <script src="JS/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+<!-- <video id="comp-irqduxf8_video" class="_3vVMz" role="presentation" crossorigin="anonymous" playsinline="" preload="auto" muted="" loop="" autoplay="" tabindex="-1" width="100%" height="100%" src="https://video.wixstatic.com/video/11062b_0fcc5b5d1613468aad7802063185e9d1/1080p/mp4/file.mp4" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;"></video> -->
